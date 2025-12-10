@@ -1,18 +1,131 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background-color: #f5f5f5;
+  color: #212121;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.page {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form-input {
+  padding: 10px 14px;
+  min-width: 260px;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #3f51b5;
+}
+
+.form-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #3f51b5;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #303f9f;
+}
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-link {
+  display: block;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 12px;
+  padding: 10px 12px 12px;
+  font-size: 14px;
+}
+
+.info-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  margin-bottom: 2px;
+}
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 5px solid #e0e0e0;
+  border-top-color: #3f51b5;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 24px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
